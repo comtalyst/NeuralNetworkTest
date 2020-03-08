@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 ### file data
-path = ""
+path = "data/"
 filename = "2d_2color_dots.txt"
 
 ### user-defined constants
@@ -21,7 +21,7 @@ np.random.seed(seed)
 ### user-difined qualification function
 def qualify(x, y):
     # this is a circle function
-    r = 150
+    r = 0
     Y = np.multiply(x,x) + np.multiply(y,y) <= np.multiply(r,r)             # got an array of booleans here
     # add noise
     noiser = (np.random.random(Y.shape) >= noise)
