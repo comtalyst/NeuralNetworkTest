@@ -1,12 +1,12 @@
 import numpy as np 
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 
 ### file data
 path = "../data/"
 filename = "2d_2color_dots.txt"
 
 ### user-defined constants
-m = 10                     # amount of data
+m = 1000                     # amount of data
 x_min = -200
 x_max = 200
 y_min = -200
@@ -44,3 +44,6 @@ f = open(path + filename, "w")
 f.write(s)
 f.close()
 
+## plot the data
+plt.scatter(X[0, :], X[1, :], c=Y, s=40, cmap=plt.cm.Spectral)
+plt.show()
