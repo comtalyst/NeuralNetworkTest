@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 ### file data
-path = "../data/"
+path = ""
 filename = "2d_2color_dots.txt"
 
 ### user-defined constants
@@ -11,7 +11,7 @@ x_min = -200
 x_max = 200
 y_min = -200
 y_max = 200
-noise = 0.05                # chance of inverted color, =1 will results in almost total inversion
+noise = 0.00                # chance of inverted color, =1 will results in almost total inversion
 seed = 136
 
 
