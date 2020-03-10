@@ -11,7 +11,7 @@ x_min = -200
 x_max = 200
 y_min = -200
 y_max = 200
-noise = 0.00                # chance of inverted color, =1 will results in almost total inversion
+noise = 0.05                # chance of inverted color, =1 will results in almost total inversion
 seed = 136
 
 
@@ -21,7 +21,8 @@ np.random.seed(seed)
 ### user-difined qualification function
 def qualify(x, y):
     # this is a linear function
-    Y = x <= y             # got an array of booleans here
+    r = 150
+    Y = x*x + y*y <= r*r            # got an array of booleans here
     # add noise
     noiser = (np.random.random(Y.shape) >= noise)
     Y = (Y == noiser)                                                       # sounds weird but it actually equivalent to what we want
