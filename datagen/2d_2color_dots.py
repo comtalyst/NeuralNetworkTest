@@ -7,12 +7,12 @@ path = "data/"
 filename = "2d_2color_dots.txt"
 
 ### user-defined constants
-m = 1000                     # amount of data
+m = 400                     # amount of data
 x_min = 0
 x_max = 1
 y_min = 0
 y_max = 1
-noise = 0.00                # chance of inverted color, =1 will results in almost total inversion
+noise = 0.05                # chance of inverted color, =1 will results in almost total inversion
 seed = 136
 
 
@@ -22,9 +22,10 @@ np.random.seed(seed)
 ### user-difined qualification function
 def qualify(x, y):
     # this is a sin function
-    r1 = 0.25
-    r2 = 0.75
-    Y = y <= np.sin(x/r1)*r2            # got an array of booleans here
+    r1 = 0.1
+    r2 = 0.2
+    r3 = 0.5
+    Y = y <= np.sin(x/r1)*r2 + r3           # got an array of booleans here
     # add noise
     noiser = (np.random.random(Y.shape) >= noise)
     Y = (Y == noiser)                                                       # sounds weird but it actually equivalent to what we want
