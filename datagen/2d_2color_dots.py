@@ -7,7 +7,7 @@ path = "data/"
 filename = "2d_2color_dots.txt"
 
 ### user-defined constants
-m = 400                     # amount of data
+m = 1000                     # amount of data
 x_min = 0
 x_max = 1
 y_min = 0
@@ -22,9 +22,9 @@ np.random.seed(seed)
 ### user-difined qualification function
 def qualify(x, y):
     # this is a sin function
-    r1 = 0.1
-    r2 = 0.2
-    r3 = 0.5
+    r1 = 0.05
+    r2 = 0.5
+    r3 = 0.4
     Y = y <= np.sin(x/r1)*r2 + r3           # got an array of booleans here
     # add noise
     noiser = (np.random.random(Y.shape) >= noise)
