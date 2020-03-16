@@ -1,0 +1,8 @@
+=== Notable Bugs === 
+• The great bug of early March
+	Issues: fundamental NN structure is broken after implementation (mainly backprop)
+	Status: FIXED (3/15/2020, after ~1 week)
+	Details:
+	- A debugger that set all negative ReLu outputs to 0 was not removed and keep the code more broken
+	* Derivatives of ReLu was incorrect: cases where Z == 0 must be 0 instead of 1 (i.e. 0-setter filter should be Z <= 0 instead of Z < 0)
+	- Gradient checking needs to check with original W, b and randomized b, not only W
