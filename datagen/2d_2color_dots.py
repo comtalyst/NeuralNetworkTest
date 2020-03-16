@@ -12,7 +12,7 @@ x_min = 0
 x_max = 1
 y_min = 0
 y_max = 1
-noise = 0.05                # chance of inverted color, =1 will results in almost total inversion
+noise = 0.00                # chance of inverted color, =1 will results in almost total inversion
 seed = 136
 
 
@@ -22,7 +22,7 @@ np.random.seed(seed)
 ### user-difined qualification function
 def qualify(x, y):
     # this is a sin function
-    r1 = 0.05
+    r1 = 0.09
     r2 = 0.5
     r3 = 0.4
     Y = y <= np.sin(x/r1)*r2 + r3           # got an array of booleans here
